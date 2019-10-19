@@ -1,0 +1,3 @@
+#loc=$(ifconfig en0 inet | grep inet | awk '{print $2}')
+#nslookup $loc
+echo name

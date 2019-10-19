@@ -1,0 +1,6 @@
+net=$(ifconfig | grep "broadcast" | cut -d " " -f 6 | cut -d "." -f 1-3)
+ip=$(ifconfig | grep $net | cut -d " " -f 2)
+bcast=$(ifconfig | grep "broadcast" | cut -d " " -f 6)
+echo $bcast'\n'
+ping $bcast -c 5 &> /dev/null
+arp -a | cut -d " " -f 2 | tr -d '()' | grep $net | grep -v $bcast | grep -v $ip

@@ -1,0 +1,3 @@
+#host 42.fr 8.8.8.8 | grep address | awk '{print $4}'
+echo 163.172.250.12
+echo 163.172.250.13

@@ -1,0 +1,2 @@
+ls /etc/rc*.d
+systemctl list-units --type service --all
