@@ -1,6 +1,18 @@
-net=$(ifconfig | grep "broadcast" | cut -d " " -f 6 | cut -d "." -f 1-3)
-ip=$(ifconfig | grep $net | cut -d " " -f 2)
-bcast=$(ifconfig | grep "broadcast" | cut -d " " -f 6)
-echo $bcast'\n'
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    02                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jphilip- <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/04/23 20:06:38 by jphilip-          #+#    #+#              #
+#    Updated: 2019/04/23 20:29:21 by jphilip-         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+net=$(ifconfig | grep "broadcast" | cut -d " " -f6 | cut -d. -f1,2)
+bcast=$(ifconfig | grep "broadcast" | cut -d " " -f6)
+echo "A.\n"$bcast'\n'
+echo "B."
 ping $bcast -c 5 &> /dev/null
-arp -a | cut -d " " -f 2 | tr -d '()' | grep $net | grep -v $bcast | grep -v $ip
+arp -a | cut -d " " -f 2 | tr -d '()' | grep $net

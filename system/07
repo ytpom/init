@@ -1,3 +1,15 @@
-ps aux | grep sshd | head -1 | awk '{print $2}'
-#service ssh status | grep "Main" | cut -d ' ' -f 4
-#cat /var/run/sshd.pid
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    07                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jphilip- <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/04/23 20:58:40 by jphilip-          #+#    #+#              #
+#    Updated: 2019/04/23 21:02:53 by jphilip-         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#ps aux | grep sshd | head -1 | awk '{print $2}'
+#service ssh status | grep Main | awk '{print $3}'
+cat /var/run/sshd.pid

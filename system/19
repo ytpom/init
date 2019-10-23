@@ -1,2 +1,15 @@
-ls /etc/rc*.d
-systemctl list-units --type service --all
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    19                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jphilip- <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/04/23 21:28:57 by jphilip-          #+#    #+#              #
+#    Updated: 2019/04/23 21:32:46 by jphilip-         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#ls /etc/rc*.d
+#systemctl list-unit-files --state=enabled
+systemctl list-units --type=service --state=active
